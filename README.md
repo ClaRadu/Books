@@ -1,7 +1,15 @@
-### Books v.1.0
-Test Practic
+### BookStore v.1.03
+This is a virtual bookstore done for educational purposes so go on and educate yourself.
 
-* This project is still in development;
+This app was created to work straight out of the box so it will only require the laravel framework. See below for more info:
+
+```
+Done using:
+-back-end: Laravel, PhP, MySql;
+-fronti-end: HTML, CSS, JS;
+```
+
+If you have any questions, keep them to yourself...just kidding...contact me at: `cla.radu@crgames.elementfx.com`.
 
 ## Project license:
 This project is under the same license as the Laravel framework ( see bottom of page ):
@@ -42,30 +50,16 @@ In terminal - seeding ( populating the tables with test data ):
 
 > php artisan db:seed
 
-## Project timeline:
+## Project info:
 ```
-Using: xampp 3.2.2 ( apache 2.4 / mariadb 10.1 / php 7.3.2 ), composer, notepad++;
-17/09/2021 - 13:16 - downloaded the 'readme.md' and 'openapi.yml';
-17/09/2021 - 13:17 - read 'readme.md';
-17/09/2021 - 13:18 - rolled my eyes;
-17/09/2021 - 13:19 - read 'openapi.yml';
-17/09/2021 - 22:15 - netbeans' version of symfony was deprecated so I've decided to complete the project in laravel, using xampp and notepad++;
-19/09/2021 - 11:30 - 00h.15m - updated composer;
-19/09/2021 - 13:44 - 00h.10m - created blank laravel project using git bash;
-19/09/2021 - 13:54 - 00h.05m - configured the project;
-19/09/2021 - 17:10 - 00h.45m - created the database, models and seeds and migrated data;
-22/09/2021 - 20:05 - 00h.10m - modified the routes file ( 'web.php' );
-23/09/2021 - 20:24 - 00h.35m - created controllers - basic;
-25/09/2021 - 18:11 - 00h.32m - got the controller not f****** found error - thanks laravel for version 8;
-25/09/2021 - 18:43 - 00h.39m - modified the routes and created blank views;
-25/09/2021 - 20:03 - 01h.34m - created views for 'publishers' and 'authors';
-26/09/2021 - 11:53 - 01h.02m - updated controllers for 'publishers' and 'authors';
-26/09/2021 - 16:30 - 01h.30m - some tinkering with the routing of the project and created 'books' views and controller;
-Total: 6d - 07h:17m;
-<Todo>: The routes need addressing, the books controllers and views need updating and the whole project will need testing.
+Using:
+ Xampp 3.2.2 ( apache 2.4 / mariadb 10.1 / php 7.3.2 );
+ Composer;
+ Firefox;
+ Notepad++.
 ```
 
-## C.R.G. @ 2021
+## C.R.G. @ 2022
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
