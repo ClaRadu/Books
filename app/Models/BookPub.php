@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class BookPub extends Model
 {
     use HasFactory;
 	
-	protected $fillable = [ 'ID', 'title' ];
+	protected $fillable = [ 'ID' ];
 }
