@@ -1,7 +1,7 @@
 ### BookStore v.1.03
 This is a virtual bookstore done for educational purposes so go on and educate yourself.
 
-This app was created to work straight out of the box so it will only require the laravel framework. See below for more info:
+This app was created to work straight out of the box so it will only require the laravel framework. See below for more info.
 
 ```
 Done using:
