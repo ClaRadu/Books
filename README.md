@@ -9,7 +9,7 @@ Done using:
 -fronti-end: HTML, CSS, JS;
 ```
 
-If you have any questions, keep them to yourself...just kidding...contact me at: `cla.radu@crgames.elementfx.com`.
+If you have any questions, keep them to yourself...just kidding...contact me at: cla.radu@crgames.elementfx.com.
 
 ## Project license:
 This project is under the same license as the Laravel framework ( see bottom of page ):
