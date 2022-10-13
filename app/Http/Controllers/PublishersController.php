@@ -42,7 +42,7 @@ class PublishersController extends Controller
 		$name = $request->input('pname');
 		
 		// add new entry
-		if (!empty($name)) { DB::table('publishers')->insert([ 'name' => $name ]); }
+		if (!empty($name) && $name !== 'edit') { DB::table('publishers')->insert([ 'name' => $name ]); }
 		
 		// redirect to root
 		return view('home', [ 'appnm' => $this->appn ]);
@@ -55,7 +55,7 @@ class PublishersController extends Controller
 		$name = $request->input('pname');
 		
 		// update data
-		if (!empty($id)) {
+		if (!empty($id) && !empty($name)) {
 			DB::table('publishers')
 				->where('id', $id)
 				->update(array('name' => $name));
@@ -70,6 +70,10 @@ class PublishersController extends Controller
 	public function dele(Request $request, $id) {
 		// first, delete the id
 		DB::table('publishers')->where('id', '=', $id)->delete();
+		// also delete from bookpub table
+		DB::table('bookpub')->where('publisher_id', '=', $id)->delete();
+		// clear cart table too because publishers and bookpub tables have a 1-1 link
+		DB::table('cart')->delete();
 		
 		// redirect to root
 		return view('home', [ 'appnm' => $this->appn ]);

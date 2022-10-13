@@ -17,7 +17,7 @@ class AuthorsController extends Controller
 		$this->appn = $hc->getName();
 	}
 	
-	// list all the entries
+	// list all entries
 	public function index(Request $request) {
 		// get all data
 		$this->authors = DB::table('authors')->get();
@@ -38,9 +38,11 @@ class AuthorsController extends Controller
 		// retrieve the value(s)
 		$fname = $request->input('afname');
 		$lname = $request->input('alname');
+		// last name can be left clear ( in case Cher or Shakira are being added to the table )
+		if (empty($lname) || strtoupper($lname) === 'EDIT') { $lname = ''; }
 		
 		// add new entry
-		if (!empty($fname)) { DB::table('authors')->insert([ 'first_name' => $fname, 'last_name' => $lname ]); }
+		if (!empty($fname) && strtoupper($fname) !== 'EDIT') { DB::table('authors')->insert([ 'first_name' => $fname, 'last_name' => $lname ]); }
 		
 		// redirect to root
 		return view('home', [ 'appnm' => $this->appn ]);
@@ -52,9 +54,11 @@ class AuthorsController extends Controller
 		$id = $request->input('aid');
 		$fname = $request->input('afname');
 		$lname = $request->input('alname');
+		// make sure we send sane values
+		if (empty($lname)) { $lname = ''; }
 		
 		// update data
-		if (!empty($id)) {
+		if (!empty($id) && !empty($fname)) {
 			DB::table('authors')
 				->where('id', $id)
 				->update(array('first_name' => $fname, 'last_name' => $lname));
@@ -64,12 +68,31 @@ class AuthorsController extends Controller
 		return view('home', [ 'appnm' => $this->appn ]);
 	}
 	
-	// delete an entry
+	// delete an entry ( get ) - not used right now -
 	public function dele(Request $request, $id) {
-		// first, delete the id
+		// first, delete element by id
 		DB::table('authors')->where('id', '=', $id)->delete();
+		// also delete from bookpub table
+		DB::table('bookpub')->where('author_id', '=', $id)->delete();
 		
 		// redirect to root
 		return view('home', [ 'appnm' => $this->appn ]);
+	}
+	
+	// deleting via post
+	public function delz(Request $request) {
+		// retrieve the value(s)
+		$id = $request->input('idz');
+		$author = $request->input('fullname');
+		
+		// first, delete element by id
+		DB::table('authors')->where('id', '=', $id)->delete();
+		// also delete from bookpub table
+		DB::table('bookpub')->where('author_id', '=', $id)->delete();
+		// clear cart table to avoid a situation where a book that isn't available remains in cart
+		DB::table('cart')->delete();
+		
+		// return delete message
+		return view('authors.msg', [ 'delAuth' => $author ]);
 	}
 }
