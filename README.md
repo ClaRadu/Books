@@ -6,7 +6,7 @@ This app was created to work straight out of the box so it will only require the
 ```
 Done using:
 -back-end: Laravel, PhP, MySql;
--fronti-end: HTML, CSS, JS;
+-front-end: HTML, CSS, JS;
 ```
 
 If you have any questions, keep them to yourself...just kidding...contact me at: cla.radu@crgames.elementfx.com.
