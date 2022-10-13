@@ -15,12 +15,13 @@ class Books extends Migration
     {
         // create table
 		 Schema::create('Books', function (Blueprint $table) {
-            $table->string('ID');
-//			$table->increments('ID');
+//			$table->string('ID'); // plan change
+			$table->increments('ID');
 			$table->string('title');
+			// initially, the plan ( not my plan tbh ) was to link the table to a json array of IDs
+			// but that's error phrone so I'm ditchig that plan to go for a classical approach
 //			$table->json('authors')->default(new Expression('(JSON_ARRAY())'));
-			$table->string('authors'); // plan change
-			$table->int('publisher_id');
+			$table->float('price', 4, 2);
             $table->timestamps();
         });
     }
