@@ -14,8 +14,8 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-		DB::table('Books')->insert([ 'title' => 'OOP Principles', 'publisher_id' => 1, 'authors' => '1,2,3']);
-		DB::table('Books')->insert([ 'title' => 'REST Api - the basics', 'publisher_id' => 3, 'authors' => '2']);
-		DB::table('Books')->insert([ 'title' => 'Making IT exciting', 'publisher_id' => 2, 'authors' => '1,3']);
+		DB::table('Books')->insert([ 'title' => 'OOP Principles', 'price' => 10.5 ]);
+		DB::table('Books')->insert([ 'title' => 'REST Api - the basics', 'price' => 2 ]);
+		DB::table('Books')->insert([ 'title' => 'Making IT exciting', 'price' => 5.25 ]);
     }
 }

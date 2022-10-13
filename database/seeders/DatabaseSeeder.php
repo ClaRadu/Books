@@ -17,11 +17,14 @@ class DatabaseSeeder extends Seeder
 /*		$this->call(AuthorSeeder::class);
 		$this->call(BookSeeder::class);
 		$this->call(PublisherSeeder::class); */
+		
 		$as = new AuthorSeeder();
 		$as->run();
 		$bs = new BookSeeder();
 		$bs->run();
 		$ps = new PublisherSeeder();
 		$ps->run();
+		$sh = new BookPubSeeder();
+		$sh->run();
     }
 }
